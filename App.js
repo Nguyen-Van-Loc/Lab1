@@ -8,17 +8,21 @@ export default function App() {
     const [desc, setDesc] = useState('');
     const [data, setData] = useState([{
         id: 1,
-        name: 'Nguyễn Van Loc',
+        name: 'Nguyen Van Loc',
         desc: 'Ph20710',
     }, {
         id: 2,
-        name: 'Nguyễn Văn A',
-        desc: 'Ph20487',
+        name: 'Nguyen Van Nam',
+        desc: 'Ph20711',
     }, {
         id: 3,
-        name: 'Nguyễn Văn B',
-        desc: 'Ph20487',
-    }]);
+        name: 'Nguyen Van Minh',
+        desc: 'Ph20712',
+    }, {
+    id: 4,
+        name: 'Nguyen Van Hoang',
+            desc: 'Ph20713',
+    } ]);
     const [id, setId] = useState(data.length + 1);
     const [list, setList] = useState(data);
     return (
@@ -33,7 +37,7 @@ export default function App() {
                                 onChangeText={text => setName(text)}
                             />
                             <TextInput style={styles.input}
-                                placeholder='Mô tả'
+                                placeholder='Noi dung'
                                 onChangeText={text => setDesc(text)}
                             />
                             <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
@@ -58,7 +62,7 @@ export default function App() {
 
                     ) :
           <>
-                        <Text style={styles.text}>Họ Tên: Mguyen Van Loc</Text>
+                        <Text style={styles.text}>Ho ten: Mguyen Van Loc</Text>
                         <Text style={styles.text}>MSV: Ph20710</Text>
                         <Button title='Thêm mới' onPress={() => setShow(!show)} />
                         <FlatList
@@ -81,12 +85,6 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-
-    tinyLogo: {
-        width: 50,
-        height: 50,
-    },
-
     input: {
         height: 40,
         margin: 12,
