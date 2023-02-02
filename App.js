@@ -61,11 +61,16 @@ export default function App() {
                         </View>
 
                     ) :
-          <>
-                        <Text style={styles.text}>Ho ten: Mguyen Van Loc</Text>
+                    <>
+                        <View style={{ borderColor: 'red', borderWidth: 1, padding: 20, borderRadius:10 }}>
+                       
+                        <Text style={styles.text}>Ho ten: Nguyen Van Loc</Text>
                         <Text style={styles.text}>MSV: Ph20710</Text>
-                        <Button title='Thêm mới' onPress={() => setShow(!show)} />
-                        <FlatList
+                            <Button title='Thêm mới' onPress={() => setShow(!show)} />
+                        </View>
+                        <View>
+
+                            <FlatList style={{ borderRadius: 10, borderWidth: 1, marginTop:10 }}
                             data={list}
                             renderItem={({ item }) => (
                                 <View style={{ flex: 1, flexDirection: 'row', marginVertical: 16 }}>
@@ -75,8 +80,10 @@ export default function App() {
                                     </View>
                                 </View>
                             )}
-                            keyExtractor={(item) => item.id} />
-                    </>
+                                keyExtractor={(item) => item.id} />
+                        </View>
+                        </>
+                    
             }
 
             <StatusBar style="auto" />
